@@ -6,6 +6,11 @@ public class ProfessorTitular extends Professor {
         this.especialidade = especialidade;
     }
 
+    public ProfessorTitular(String nome, String sobrenome, int codigoProfessor, String especialidade) {
+        super(nome, sobrenome, codigoProfessor);
+        this.especialidade = especialidade;
+    }
+
     public String getEspecialidade() {
         return especialidade;
     }

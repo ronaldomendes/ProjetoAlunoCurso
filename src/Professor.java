@@ -11,6 +11,12 @@ public class Professor {
         this.codigoProfessor = codigoProfessor;
     }
 
+    public Professor(String nome, String sobrenome, int codigoProfessor) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.codigoProfessor = codigoProfessor;
+    }
+
     public String getNome() {
         return nome;
     }

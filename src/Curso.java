@@ -19,6 +19,12 @@ public class Curso {
         this.listaAluno = listaAluno;
     }
 
+    public Curso(String nomeCurso, Integer codigoCurso, Integer maxAlunos) {
+        this.nomeCurso = nomeCurso;
+        this.codigoCurso = codigoCurso;
+        this.maxAlunos = maxAlunos;
+    }
+
     public ProfessorTitular getProfessorTitular() {
         return professorTitular;
     }

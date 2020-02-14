@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.List;
 
 public class DigitalHouseManager {
@@ -47,35 +48,42 @@ public class DigitalHouseManager {
     }
 
     public void registrarCurso(String nome, Integer codigoCurso, Integer quantidadeMaximaDeAlunos) {
-        //
+        Curso curso = new Curso(nome, codigoCurso, quantidadeMaximaDeAlunos);
+        this.listaCurso.add(curso);
     }
 
     public void excluirCurso(Integer codigoCurso) {
-        //
+        this.listaCurso.remove(codigoCurso);
     }
 
     public void registrarProfessorAdjunto(String nome, String sobrenome, Integer codigoProfessor, Integer quantidadeDeHoras) {
-        //
+        ProfessorAdjunto profAdjunto = new ProfessorAdjunto(nome, sobrenome, codigoProfessor, quantidadeDeHoras);
+        this.listaProfessor.add(profAdjunto);
     }
 
     public void registrarProfessorTitular(String nome, String sobrenome, Integer codigoProfessor, String especialidade) {
-        //
+        ProfessorTitular profTitular = new ProfessorTitular(nome, sobrenome, codigoProfessor, especialidade);
+        this.listaProfessor.add(profTitular);
     }
 
     public void excluirProfessor(Integer codigoProfessor) {
-        //
+        this.listaProfessor.remove(codigoProfessor);
     }
 
     public void matricularAluno(String nome, String sobrenome, Integer codigoAluno) {
-        //
+        Aluno aluno = new Aluno(nome, sobrenome, codigoAluno);
+        this.listaAluno.add(aluno);
     }
 
     public void matricularAluno(Integer codigoAluno, Integer codigoCurso) {
-        //
+        if(listaCurso.contains(codigoCurso)) {
+            Matricula matricula = new Matricula(listaAluno.get(codigoAluno), listaCurso.get(codigoCurso), new Date());
+            this.listaMatricula.add(matricula);
+            System.out.println("Matrícula realizada com sucesso!");
+        }
     }
 
     public void alocarProfessores(Integer codigoCurso, Integer codigoProfessorTitular, Integer codigoProfessorAdjunto) {
         //
     }
-
 }

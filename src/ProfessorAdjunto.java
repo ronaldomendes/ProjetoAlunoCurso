@@ -6,6 +6,11 @@ public class ProfessorAdjunto extends Professor {
         this.horasDeMonitoria = horasDeMonitoria;
     }
 
+    public ProfessorAdjunto(String nome, String sobrenome, int codigoProfessor, int horasDeMonitoria) {
+        super(nome, sobrenome, codigoProfessor);
+        this.horasDeMonitoria = horasDeMonitoria;
+    }
+
     public int getHorasDeMonitoria() {
         return horasDeMonitoria;
     }
